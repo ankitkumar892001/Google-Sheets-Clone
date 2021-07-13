@@ -1,73 +1,78 @@
 /* color: #188038;
 background-color: #e6f4ea;
-background-color: #05c170 */
+background-color: #05c170 (grid) */
 
 
-.loader_bg{
-  position: fixed;
-  z-index: 999999;
-  background-color: #ffffff;
-  width: 100%;
-  height: 100%;
+
+/* ******************** Loader ******************** */
+.loader_bg {
+    position: fixed;
+    z-index: 999999;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
 }
 
-.loader{
-  border: 0 solid transparent;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  top:calc(50vh - 130px);
-  left:calc(50vw - 100px);
+.loader {
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 130px);
+    left: calc(50vw - 100px);
 }
 
-.loader:before, .loader:after{
-  content: '';
-  border: 1rem solid #0f9d58;
-  border-radius: 50%;
-  width: inherit;
-  height: inherit;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: loader 2s linear infinite;
-  opacity: 0;
+.loader:before,.loader:after {
+    content: '';
+    border: 1rem solid #0f9d58;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
 }
 
-.loader:before{
-  animation-delay:.5s;
+.loader:before {
+    animation-delay: .5s;
 }
+
 @keyframes loader {
-  0%{
-    transform: scale(0);
-    opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    transform: scale(1.5);
-    opacity: 0;
-  }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
 
 
-
-
-/* EXCEL STYLES */
-
+/* ******************** Google-Sheets ******************** */
 * {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
+
+
+/* ******************** Menu Container ******************** */
+
+/* ******************** Menu Item 1 ******************** */
 .menu-item-1 {
-  display: flex;
-  height: 50px;
-  border-bottom: lightgray 1px solid;
-  padding: 10px;
+    display: flex;
+    height: 50px;
+    border-bottom: lightgray 1px solid;
+    padding: 10px;
 }
 
 .menu-container-item {
@@ -77,16 +82,16 @@ background-color: #05c170 */
     height: 25px;
 }
 
-.menu-container-item input{
+.menu-container-item input {
     padding: 5px;
     border: none;
 }
 
 .menu-container-item input:hover {
-  border: 1px lightgray solid;
+    border: 1px lightgray solid;
 }
 
-.menu-item-option{
+.menu-item-option {
     padding: 5px;
 }
 
@@ -96,9 +101,9 @@ background-color: #05c170 */
     background: #e6f4ea;
 }
 
-/*  *******************  */
 
 
+/* ******************** Menu Item 2 ******************** */
 .menu-item-2 {
     display: flex;
     height: 25px;
@@ -106,127 +111,129 @@ background-color: #05c170 */
     padding: 10px;
 }
 
-.menu-item-2 > select {
+.menu-item-2>select {
     border-radius: 3px;
     width: 20%;
     margin-right: 10px;
 }
 
 .styler-btn-container {
-  display: flex;
+    display: flex;
 }
 
 .styler-btn {
-  padding: 0 10px 0 10px;
-  /* border-left: 1px solid lightgray; */
-  /* border-right: 1px solid lightgray; */
+    padding: 0 10px 0 10px;
+    /* border-left: 1px solid lightgray; */
+    /* border-right: 1px solid lightgray; */
 }
 
-.styler-align{
+.styler-align {
     margin: 0 10px 0 10px;
 }
 
 .styler-btn-container input {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .styler-btn:hover {
-  cursor: pointer;
-  background: #e6f4ea;
-  border-radius: 3px;
+    cursor: pointer;
+    background: #e6f4ea;
+    border-radius: 3px;
 }
 
+/* ?????????????????????????????????????????????????????????????????????????????????? */
 /* .styler-btn:active {
     transform: scale(1.1);
     background: lightgray;
   } */
-  
-/* ???????????????????????????????????????? */
+/* ?????????????????????????????????????????????????????????????????????????????????????? */
+
 .active-styler {
     color: #188038;
     background-color: #e6f4ea;
 }
 
 
-/* ********************** */
 
-/* formula container styling starts here */
-
-
+/* ******************** Formula Container ******************** */
 .formula-container {
-  display: flex;
-  height: 25px;
-  border-bottom: 1px lightgray solid;
-  padding: 5px 10px;
+    display: flex;
+    height: 25px;
+    border-bottom: 1px lightgray solid;
+    padding: 5px 10px;
 }
-  
-  .address-box {
+
+
+
+/* ******************** Address Box ******************** */
+.address-box {
     padding: 5px;
     border: none;
     outline: none;
-  }
+}
 
-  .address-box:hover {
-  background-color: #e6f4ea;
+.address-box:hover {
+    background-color: #e6f4ea;
 }
 
 .formula-container img {
     filter: grayscale(100%);
     height: 25px;
-  padding: 0px 5px;
-  border-right: 1px solid lightgray;
-  border-left: 1px solid lightgray;
+    padding: 0px 5px;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
 }
 
+
+
+/* ******************** Formula Box ******************** */
 .formula-box {
-  width: 100%;
-  padding: 5px;
-  outline: none;
-  border: none;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
 }
 
 
-/* ********************************** grid ********************* */
 
+/* ******************** Grid Container ******************** */
 .grid-container {
-  /* TOTAL - MENU - FORMULA - FOOTER */
-  height: calc(100vh - (117px + 36px + 40px));
-  overflow: auto;
-  position: relative;
+    /* TOTAL - MENU - FORMULA - FOOTER */
+    height: calc(100vh - (117px + 36px + 40px));
+    overflow: auto;
+    position: relative;
 }
 
 .top-left-box {
-  height: 30px;
-  width: 30px;
-  background-color: #05c170;
+    height: 30px;
+    width: 30px;
+    background-color: #05c170;
 }
 
 .top-row {
-  position: absolute;
-  top: 0px;
-  left: 30px;
-  background-color: #05c170;
-  height: 30px;
-  display: flex;
-  align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    background-color: #05c170;
+    height: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .left-col {
     position: absolute;
     top: 30px;
-    left: 0px;    
+    left: 0px;
     width: 30px;
-  }
-  
-  .grid {
-  position: absolute;
-  top: 30px;
-  left: 30px;
 }
 
+.grid {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
 
-  
-  .left-col-box {
+.left-col-box {
     height: 30px;
     background-color: #05c170;
     border-top: 1px solid gray;
@@ -234,108 +241,103 @@ background-color: #05c170 */
     justify-content: center;
     align-items: center;
     color: white;
-  }
-    .row {
-  display: flex;
-  overflow: hidden;
+}
+
+.row {
+    display: flex;
+    overflow: hidden;
 }
 
 .col {
-  min-width: 100px;
-  max-width: 100px;
-  border-bottom: 1px solid lightgray;
-  border-left: 1px solid lightgray;
-  min-height: 30px;
-  max-height: 30px;
-  line-height: 30px;
-  overflow: hidden;
+    min-width: 100px;
+    max-width: 100px;
+    border-bottom: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    min-height: 30px;
+    max-height: 30px;
+    line-height: 30px;
+    overflow: hidden;
 }
 
 .top-row .col {
     text-align: center;
-  border-left: 1px solid gray;
+    border-left: 1px solid gray;
     color: white;
-  }
+}
 
 
-
-/* ***************footer******************** */
-
+/* ******************** Footer Container ******************** */
 
 .footer {
-  height: 40px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
 .plus-btn {
-  width: 35px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-right: 1px solid gray;
+    width: 35px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid gray;
 }
 
 .fa-plus {
-  color: gray;
+    color: gray;
 }
 
 .fa-plus:hover {
-  cursor: pointer;
-  color: #188038;
+    cursor: pointer;
+    color: #188038;
 }
 
 .sheets {
-  height: 100%;
-  width: calc(100vw - 35px);
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  overflow-y: hidden;
+    height: 100%;
+    width: calc(100vw - 35px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow-y: hidden;
 }
 
 .sheet {
-  background-color: white;
-  height: 100%;
-  width: 100px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 3px;
-  /* font-family: Arial, Helvetica, sans-serif; */
-  /* font-weight: 600; */
-  color: gray;
-  border-right: 1px solid gray;
-  border-top: 1px solid gray;
+    background-color: white;
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3px;
+    color: gray;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
 }
 
-.workbook{
-  background-color: lightgray;
-  height: 100%;
-  width: 200px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 3px;
-  /* font-family: Arial, Helvetica, sans-serif; */
-  /* font-weight: 600; */
-  margin: 0 20px;
+.workbook {
+    background-color: lightgray;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3px;
+    margin: 0 20px;
 }
 
-.sheet:hover{
+.sheet:hover {
     cursor: pointer;
 }
 
-.workbook:hover{
+.workbook:hover {
     color: #188038;
     background-color: #e6f4ea;
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .active-sheet {
-  color: #188038;
-  background-color: #e6f4ea;
-  box-shadow: 3px 3px gray;
+    color: #188038;
+    background-color: #e6f4ea;
+    box-shadow: 3px 3px gray;
 }
