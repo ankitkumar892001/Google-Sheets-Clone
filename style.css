@@ -1,3 +1,8 @@
+/* color: #188038;
+background-color: #e6f4ea;
+background-color: #05c170 */
+
+
 .loader_bg{
   position: fixed;
   z-index: 999999;
@@ -60,6 +65,7 @@
 
 .menu-item-1 {
   display: flex;
+  height: 50px;
   border-bottom: lightgray 1px solid;
   padding: 10px;
 }
@@ -87,7 +93,7 @@
 .menu-item-option:hover {
     cursor: pointer;
     border-radius: 3px;
-    background: lightgray;
+    background: #e6f4ea;
 }
 
 /*  *******************  */
@@ -95,6 +101,7 @@
 
 .menu-item-2 {
     display: flex;
+    height: 25px;
     border-bottom: 1px lightgray solid;
     padding: 10px;
 }
@@ -134,6 +141,7 @@
     background: lightgray;
   } */
   
+/* ???????????????????????????????????????? */
 .active-styler {
     color: #188038;
     background-color: #e6f4ea;
@@ -146,9 +154,9 @@
 
 
 .formula-container {
-  width: 100%;
   display: flex;
-  border-bottom: 1px grey solid;
+  height: 25px;
+  border-bottom: 1px lightgray solid;
   padding: 5px 10px;
 }
   
@@ -163,8 +171,8 @@
 }
 
 .formula-container img {
+    filter: grayscale(100%);
     height: 25px;
-    text-align: center;
   padding: 0px 5px;
   border-right: 1px solid lightgray;
   border-left: 1px solid lightgray;
@@ -178,108 +186,110 @@
 }
 
 
-/* ******************** grid ********************* */
+/* ********************************** grid ********************* */
 
 .grid-container {
   /* TOTAL - MENU - FORMULA - FOOTER */
-  height: calc(100vh - (5rem + 37px + 3rem));
+  height: calc(100vh - (117px + 36px + 40px));
   overflow: auto;
   position: relative;
 }
 
 .top-left-box {
-  
-  height: 35px;
-  width: 25px;
-  background-color: rgb(62, 63, 62);
+  height: 30px;
+  width: 30px;
+  background-color: #05c170;
 }
 
 .top-row {
   position: absolute;
   top: 0px;
-  left: 25px;
-  background-color: #0f9d58;
-  height: 35px;
+  left: 30px;
+  background-color: #05c170;
+  height: 30px;
   display: flex;
-  justify-content: start;
   align-items: center;
+}
+
+.left-col {
+    position: absolute;
+    top: 30px;
+    left: 0px;    
+    width: 30px;
+  }
   
-}
-.grid {
+  .grid {
   position: absolute;
-  top: 35px;
-  left: 25px;
+  top: 30px;
+  left: 30px;
 }
-.row {
+
+
+  
+  .left-col-box {
+    height: 30px;
+    background-color: #05c170;
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+    .row {
   display: flex;
   overflow: hidden;
 }
+
 .col {
-  /* box-sizing: border-box; */
-  /* display: flex;
-  align-items: center; */
   min-width: 100px;
   max-width: 100px;
   border-bottom: 1px solid lightgray;
-  border-left: 3px solid darkgrey;
+  border-left: 1px solid lightgray;
   min-height: 30px;
   max-height: 30px;
-  text-align: center;
   line-height: 30px;
   overflow: hidden;
 }
 
-
 .top-row .col {
-  color: white;
-}
+    text-align: center;
+  border-left: 1px solid gray;
+    color: white;
+  }
 
-.left-col {
-  width: 25px;
-}
 
-.left-col-box {
-  height: 30px;
-  background-color: #0f9d58;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  
-  /* box-sizing: border-box; */
-}
+
+/* ***************footer******************** */
+
 
 .footer {
-  height: 3rem;
-  background-color: rgb(255, 255, 255);
+  height: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }
 
 .plus-btn {
-  padding-top: 0.2rem;
-  width: 2rem;
-  height: 2rem;
+  width: 35px;
+  height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  border-right: 1px solid gray;
 }
 
 .fa-plus {
-  font-size: 1.3rem;
-  color: rgb(110, 109, 109);
+  color: gray;
 }
+
 .fa-plus:hover {
   cursor: pointer;
-  color: rgb(3, 3, 3);
+  color: #188038;
 }
 
 .sheets {
-  height: 80%;
-  width: calc(100vw - 2rem);
+  height: 100%;
+  width: calc(100vw - 35px);
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -287,46 +297,45 @@
 }
 
 .sheet {
-  background-color: rgb(219, 219, 219);
-  height: 90%;
-  width: 6rem;
+  background-color: white;
+  height: 100%;
+  width: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  color: rgb(117, 121, 121);
-  border-right: 0.1px solid rgb(121, 121, 121);
-  border-top: 0.1px solid rgb(121, 121, 121);
+  border-radius: 3px;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* font-weight: 600; */
+  color: gray;
+  border-right: 1px solid gray;
+  border-top: 1px solid gray;
 }
 
 .workbook{
-  background-color: rgb(219, 219, 219);
-  height: 90%;
-  width: 10rem;
+  background-color: lightgray;
+  height: 100%;
+  width: 200px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  color: rgb(117, 121, 121);
-  margin-right: 30px;
-  margin-left: 30px;
-  /* border-right: 0.1px solid black;
-  border-top: 0.1px solid black; */
+  border-radius: 3px;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* font-weight: 600; */
+  margin: 0 20px;
 }
 
-.sheet:hover , .workbook:hover{
+.sheet:hover{
+    cursor: pointer;
+}
+
+.workbook:hover{
+    color: #188038;
+    background-color: #e6f4ea;
   cursor: pointer;
 }
 
 .active-sheet {
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
-  border-top: 2px solid grey;
-  background-color: white;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  transform: scale(1.1);
-  color: rgb(73, 69, 69);
+  color: #188038;
+  background-color: #e6f4ea;
+  box-shadow: 3px 3px gray;
 }
