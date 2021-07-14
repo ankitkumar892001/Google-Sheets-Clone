@@ -334,10 +334,12 @@ background-color: #05c170 (grid) */
     color: #188038;
     background-color: #e6f4ea;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .active-sheet {
     color: #188038;
     background-color: #e6f4ea;
     box-shadow: 3px 3px gray;
+    font-weight: bold;
 }
