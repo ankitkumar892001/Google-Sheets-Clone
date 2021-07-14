@@ -4,7 +4,6 @@ background-color: #05c170 (grid) */
 
 
 
-/* ******************** Google-Sheets ******************** */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +12,7 @@ background-color: #05c170 (grid) */
 
 
 
-/* ******************** Menu Container ******************** */
+/* **************************************** Menu Container **************************************** */
 
 /* ******************** Menu Item 1 ******************** */
 .menu-item-1 {
@@ -103,7 +102,7 @@ background-color: #05c170 (grid) */
 
 
 
-/* ******************** Formula Container ******************** */
+/* **************************************** Formula Container **************************************** */
 .formula-container {
     display: flex;
     height: 25px;
@@ -162,10 +161,9 @@ background-color: #05c170 (grid) */
     position: absolute;
     top: 0px;
     left: 30px;
-    background-color: #05c170;
     height: 30px;
     display: flex;
-    align-items: center;
+    background-color: #05c170;
 }
 
 .left-col {
@@ -183,12 +181,12 @@ background-color: #05c170 (grid) */
 
 .left-col-box {
     height: 30px;
+    color: white;
     background-color: #05c170;
     border-top: 1px solid gray;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
 }
 
 .row {
@@ -197,12 +195,10 @@ background-color: #05c170 (grid) */
 }
 
 .col {
-    min-width: 100px;
-    max-width: 100px;
-    border-bottom: 1px solid lightgray;
+    width: 100px;
+    border-top: 1px solid lightgray;
     border-left: 1px solid lightgray;
-    min-height: 30px;
-    max-height: 30px;
+    height: 30px;
     line-height: 30px;
     overflow: hidden;
 }
@@ -214,7 +210,7 @@ background-color: #05c170 (grid) */
 }
 
 
-/* ******************** Footer Container ******************** */
+/* **************************************** Footer Container **************************************** */
 
 .footer {
     height: 40px;

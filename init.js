@@ -1,4 +1,4 @@
-// ******************** left-column ********************
+// **************************************** left-column ****************************************
 let left_col = document.querySelector(".left-col");
 let str = "";
 for (let i = 0; i < 100; i++) {
@@ -8,7 +8,7 @@ left_col.innerHTML = str;
 
 
 
-// ******************** top-row ********************
+// **************************************** top-row ****************************************
 let top_row = document.querySelector(".top-row");
 str = "";
 for (let i = 0; i < 26; i++) {
@@ -18,7 +18,7 @@ top_row.innerHTML = str;
 
 
 
-// ******************** grid ******************** 
+// **************************************** grid **************************************** 
 let grid = document.querySelector(".grid");
 str = "";
 for (let i = 0; i < 100; i++) {
