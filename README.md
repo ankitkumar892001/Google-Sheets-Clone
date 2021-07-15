@@ -5,6 +5,6 @@ Implemented
 * alignment (horizontal)
 * foreground & backgorund-color     
       
-using different css properties   
+using different css properties along with Dual Binding  
      
 Used Graph Data Structure to implement Excel formula
