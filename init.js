@@ -7,7 +7,6 @@ for (let i = 0; i < 100; i++) {
 left_col.innerHTML = str;
 
 
-
 // **************************************** top-row ****************************************
 let top_row = document.querySelector(".top-row");
 str = "";
@@ -15,7 +14,6 @@ for (let i = 0; i < 26; i++) {
   str += `<div class="col">${String.fromCharCode(i + 65)}</div>`;
 }
 top_row.innerHTML = str;
-
 
 
 // **************************************** grid **************************************** 

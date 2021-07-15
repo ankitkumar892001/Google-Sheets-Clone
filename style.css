@@ -1,9 +1,6 @@
 /* color: #188038;
 background-color: #e6f4ea;
 background-color: #05c170 (grid) */
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +8,7 @@ background-color: #05c170 (grid) */
 }
 
 
-
 /* **************************************** Menu Container **************************************** */
-
 /* ******************** Menu Item 1 ******************** */
 .menu-item-1 {
     display: flex;
@@ -49,7 +44,6 @@ background-color: #05c170 (grid) */
 }
 
 
-
 /* ******************** Menu Item 2 ******************** */
 .menu-item-2 {
     display: flex;
@@ -70,8 +64,6 @@ background-color: #05c170 (grid) */
 
 .styler-btn {
     padding: 0 10px 0 10px;
-    /* border-left: 1px solid lightgray; */
-    /* border-right: 1px solid lightgray; */
 }
 
 .styler-align {
@@ -88,18 +80,10 @@ background-color: #05c170 (grid) */
     border-radius: 3px;
 }
 
-/* ?????????????????????????????????????????????????????????????????????????????????? */
-/* .styler-btn:active {
-    transform: scale(1.1);
-    background: lightgray;
-  } */
-/* ?????????????????????????????????????????????????????????????????????????????????????? */
-
 .active-styler {
     color: #188038;
     background-color: #e6f4ea;
 }
-
 
 
 /* **************************************** Formula Container **************************************** */
@@ -109,7 +93,6 @@ background-color: #05c170 (grid) */
     border-bottom: 1px lightgray solid;
     padding: 5px 10px;
 }
-
 
 
 /* ******************** Address Box ******************** */
@@ -132,7 +115,6 @@ background-color: #05c170 (grid) */
 }
 
 
-
 /* ******************** Formula Box ******************** */
 .formula-box {
     width: 100%;
@@ -140,7 +122,6 @@ background-color: #05c170 (grid) */
     outline: none;
     border: none;
 }
-
 
 
 /* ******************** Grid Container ******************** */
@@ -198,7 +179,8 @@ background-color: #05c170 (grid) */
     width: 100px;
     border-top: 1px solid lightgray;
     border-left: 1px solid lightgray;
-    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
     line-height: 30px;
     overflow: hidden;
 }
@@ -211,7 +193,6 @@ background-color: #05c170 (grid) */
 
 
 /* **************************************** Footer Container **************************************** */
-
 .footer {
     height: 40px;
     display: flex;
@@ -282,8 +263,9 @@ background-color: #05c170 (grid) */
 }
 
 .active-sheet {
+    z-index: 10;
     color: #188038;
     background-color: #e6f4ea;
-    box-shadow: 3px 3px gray;
+    box-shadow: 0 0 5px gray;
     font-weight: bold;
 }
