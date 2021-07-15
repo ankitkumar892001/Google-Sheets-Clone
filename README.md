@@ -1,10 +1,10 @@
 # Spreadsheet Application
 Implemented 
-* font-styling & sizing 
+* font-styling & resizing 
 * formatting (bold, italic, underline) 
-* text-alignment & color
+* alignment (horizontal)
 * foreground & backgorund-color     
       
-using different css properties   
+using different css properties along with Dual Binding  
      
 Used Graph Data Structure to implement Excel formula
