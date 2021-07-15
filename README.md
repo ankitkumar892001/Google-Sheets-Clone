@@ -1,8 +1,8 @@
 # Spreadsheet Application
 Implemented 
-* font-styling & sizing 
+* font-styling & resizing 
 * formatting (bold, italic, underline) 
-* text-alignment (horizontal)
+* alignment (horizontal)
 * foreground & backgorund-color     
       
 using different css properties   
