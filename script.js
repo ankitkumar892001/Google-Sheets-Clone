@@ -8,7 +8,7 @@ let alignStyler = document.querySelector("#styler-align");
 let bgSelector = document.querySelector("#bg-color");
 let textColorSelector = document.querySelector("#color");
 let addressBox = document.querySelector("#address-box");
-let formulaInput = document.querySelector(".formula-box");
+let formulaInput = document.querySelector("#formula-box");
 let plusBtn = document.querySelector(".fa-plus");
 let presentSheets = document.querySelectorAll(".sheet");
 
@@ -17,10 +17,13 @@ let sheetDB = workbookDB[0];
 // console.log("workbookDB - ",workbookDB);
 
 
+
+
+
 // `````````````````````````````````````````````````````````````````````````````````````
-// ````````````````````````` DUAL BINDING I part ( Div -> Menu ) `````````````````````````
+// ````````````````````````` DUAL BINDING part I ( Div -> Menu ) `````````````````````````
 // `````````````````````````````````````````````````````````````````````````````````````
-// ````````````````````````` addeventListener for every cell `````````````````````````
+// ````````````````````````` addeventListener for each cell `````````````````````````
 // `````````````````````````````````````````````````````````````````````````````````````
 let cellsHandler = () => {
     for (let i = 0; i < cells.length; i++) {              //2600 cells
@@ -29,8 +32,6 @@ let cellsHandler = () => {
             let cId = Number(cells[i].getAttribute("cid"));
             let address = `${String.fromCharCode(cId + 65)}${rId + 1}`;
             addressBox.value = address;
-
-            // setting styles to menu items when clicked on div  
             let cellObject = sheetDB[rId][cId];
             setStyles(cellObject);
             setFormula(cellObject);
@@ -123,10 +124,22 @@ let setFormula = (cellObject) => {
 };
 
 
+
+// ```````````````````````````````````````````````````````````````````````````
+// ````` Helper function to get rId and cId from address ( D1 -> 0,3 ) `````
+// ```````````````````````````````````````````````````````````````````````````
+let getAdress = (address) => {
+    let cId = address.charCodeAt(0) - 65;
+    let rId = Number(address.slice(1)) - 1;
+    return { rId, cId };
+};
+
+
+
 // `````````````````````````````````````````````````````````````````````````````````````
-// ````````````````````````` DUAL BINDING II part ( Menu -> Div ) `````````````````````````
+// ````````````````````````` DUAL BINDING part II ( Menu -> Div ) `````````````````````````
 // `````````````````````````````````````````````````````````````````````````````````````
-// ````````````````````````` addeventListeners for every tool in Menu `````````````````````````
+// ````````````````````````` addeventListeners for each menu item `````````````````````````
 // `````````````````````````````````````````````````````````````````````````````````````
 fontResizer.addEventListener("change", (event) => {
     // event.currentTarget -> returns element in the form of an object
@@ -219,75 +232,13 @@ document.querySelector("#bg-color").addEventListener("change", (event) => {
 });
 
 
-// ```````````````````````````````````````````````````````````````````````````
-// `````````` Helper function to derive rId and cId from address-box ( D1 -> 0,3 ) ``````````
-// ```````````````````````````````````````````````````````````````````````````
-let getAdress = (address) => {
-    let cId = address.charCodeAt(0) - 65;
-    let rId = Number(address.slice(1)) - 1;
-    return { rId, cId };
-};
+
 
 
 // ```````````````````````````````````````````````````````````````````````````
-// ``````````````` Plus Button addeventListener to add a new sheet ```````````````
-// ```````````````````````````````````````````````````````````````````````````
-plusBtn.addEventListener("click", (event) => {
-    let sheetArr = document.querySelectorAll(".sheet");
-    let newSheetId = sheetArr.length + 1;
-    if (newSheetId <= 10) {
-        let sheets = document.querySelector(".sheets");
-        let newSheet = document.createElement("div");
-        newSheet.classList.add("sheet");
-        newSheet.setAttribute("sheetIdx", newSheetId);
-        newSheet.innerText = `Sheet ${newSheetId}`;
-        sheets.appendChild(newSheet);
-        newSheetCreate();
-        newSheet.addEventListener("click", sheetSelect);
-        newSheet.click();
-    } else {
-        alert("Can't create more than 10 sheets");
-    }
-});
-
-
-// ```````````````````````````````````````````````````````````````````````````
-// ````` Creates new sheetDB (blank) and adds it to workbookDB (plusBtn) `````
-// ```````````````````````````````````````````````````````````````````````````
-let newSheetCreate = () => {
-    console.log("newSheetCreate");
-    let sheetDB = [];
-    for (let i = 0; i < 100; i++) {
-        let row = [];
-        for (let j = 0; j < 26; j++) {
-            let cell = {
-                fontSize: "16",
-                fontFamily: "Arial",
-                bold: false,
-                italic: false,
-                underline: false,
-                halign: "left",
-                textColor: "#000000",
-                bgColor: "#ffffff",
-                children: [],
-                formula: "",
-                value: "",
-            };
-            row.push(cell);
-        }
-        sheetDB.push(row);
-    }
-    workbookDB.push(sheetDB);
-
-    myStorage.setItem("Sheets-Workbook", JSON.stringify(workbookDB));
-};
-
-
-// ```````````````````````````````````````````````````````````````````````````
-// ``````````````` Function triggered when a sheet is selected ```````````````
+// ``````````````` add class active-sheet to the selected sheet ```````````````
 // ```````````````````````````````````````````````````````````````````````````
 let sheetSelect = (event) => {
-    console.log("sheetSelect");
     let currentTarget = event.target;
     let sheetArr = document.querySelectorAll(".sheet");
     for (let i = 0; i < sheetArr.length; i++) {
@@ -298,18 +249,15 @@ let sheetSelect = (event) => {
     }
     currentTarget.classList.add("active-sheet");
     sheetId = Number(currentTarget.getAttribute("sheetIdx")) - 1;
-    console.log("sheetId - ",sheetId);
+    console.log("sheetSelectId - ",sheetId);
     sheetDB = workbookDB[sheetId];
     loadUI(sheetDB);
 };
 
-for (let i = 0; i < presentSheets.length; i++) {
-    presentSheets[i].addEventListener("click", sheetSelect);
-}
 
 
 // ```````````````````````````````````````````````````````````````````````````
-// ``````````````` Loads UI for the Selected Sheet (sheetSelect()) ```````````````
+// ```````````````````` loads UI for the selected sheet  ````````````````````
 // ```````````````````````````````````````````````````````````````````````````
 let loadUI = (sheetDB) => {
     for (let i = 0; i < sheetDB.length; i++) {
@@ -341,11 +289,77 @@ let loadUI = (sheetDB) => {
 };
 
 
-// ``````````````````````````````````````````````````````````````````````````
-// ``````````````````````````````````````````````````````````````````````````
-// `````````````Updating values of selected cell with blur event``````````````
-// ``````````````````````````````````````````````````````````````````````````
-// ``````````````````````````````````````````````````````````````````````````
+
+// ```````````````````````````````````````````````````````````````````````````
+// ```````````````````` addEventListener to each sheet ````````````````````
+// ```````````````````````````````````````````````````````````````````````````
+for (let i = 0; i < presentSheets.length; i++) {
+    presentSheets[i].addEventListener("click", sheetSelect);
+}
+
+
+
+// ```````````````````````````````````````````````````````````````````````````
+// ```````````````````` addEventListener to plus button ````````````````````
+// ```````````````````````````````````````````````````````````````````````````
+plusBtn.addEventListener("click", (event) => {
+    let sheetArr = document.querySelectorAll(".sheet");
+    let newSheetIdx = sheetArr.length + 1;
+    if (newSheetIdx <= 10) {
+        let sheets = document.querySelector(".sheets");
+        let newSheet = document.createElement("div");
+        newSheet.classList.add("sheet");
+        newSheet.setAttribute("sheetIdx", newSheetIdx);
+        newSheet.innerText = `Sheet ${newSheetIdx}`;
+        sheets.appendChild(newSheet);
+        newSheetCreate();
+        newSheet.addEventListener("click", sheetSelect);
+        newSheet.click();
+    } else {
+        alert("Can't create more than 10 sheets");
+    }
+});
+
+
+
+// ```````````````````````````````````````````````````````````````````````````
+// ``````````````` creates new sheetDB and adds it to workbookDB ```````````````
+// ```````````````````````````````````````````````````````````````````````````
+let newSheetCreate = () => {
+    console.log("newSheetCreate");
+    let sheetDB = [];
+    for (let i = 0; i < 100; i++) {
+        let row = [];
+        for (let j = 0; j < 26; j++) {
+            let cell = {
+                fontSize: "16",
+                fontFamily: "Arial",
+                bold: false,
+                italic: false,
+                underline: false,
+                halign: "left",
+                textColor: "#000000",
+                bgColor: "#ffffff",
+                children: [],
+                formula: "",
+                value: "",
+            };
+            row.push(cell);
+        }
+        sheetDB.push(row);
+    }
+    workbookDB.push(sheetDB);
+
+    myStorage.setItem("Sheets-Workbook", JSON.stringify(workbookDB));
+};
+
+
+
+
+
+// ```````````````````````````````````````````````````````````````````````````
+// ``````````````` Updating values of selected cell with blur event ```````````````
+// ```````````````````````````````````````````````````````````````````````````
 for (let i = 0; i < cells.length; i++) {
     cells[i].addEventListener("blur", function handleCell() {
         let address = addressBox.value;
