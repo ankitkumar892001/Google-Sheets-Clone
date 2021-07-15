@@ -2,7 +2,7 @@
 Implemented 
 * font-styling & sizing 
 * formatting (bold, italic, underline) 
-* text-alignment & color
+* text-alignment (horizontal)
 * foreground & backgorund-color     
       
 using different css properties   
