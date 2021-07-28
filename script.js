@@ -13,8 +13,13 @@ let plusBtn = document.querySelector(".fa-plus");
 let presentSheets = document.querySelectorAll(".sheet");
 
 let sheetId = 0;
-let sheetDB = workbookDB[0]; 
+let sheetDB = workbookDB[0];
 // console.log("workbookDB - ",workbookDB);
+
+
+
+
+
 
 
 
@@ -111,7 +116,7 @@ let setFontStyle = (cellObject) => {
         fontStyler.value = "Monospace";
     } else if (cellObject.fontFamily == "sans-serif") {
         fontStyler.value = "sans-serif";
-    } 
+    }
 };
 
 let setColor = (cellObject) => {
@@ -136,6 +141,13 @@ let getAdress = (address) => {
 
 
 
+
+
+
+
+
+
+
 // `````````````````````````````````````````````````````````````````````````````````````
 // ````````````````````````` DUAL BINDING part II ( Menu -> Div ) `````````````````````````
 // `````````````````````````````````````````````````````````````````````````````````````
@@ -143,7 +155,7 @@ let getAdress = (address) => {
 // `````````````````````````````````````````````````````````````````````````````````````
 fontResizer.addEventListener("change", (event) => {
     // event.currentTarget -> returns element in the form of an object
-    console.log("event.currentTarget - ",event.currentTarget);
+    console.log("event.currentTarget - ", event.currentTarget);
 
     let size = event.currentTarget.value;
     let address = addressBox.value;
@@ -249,7 +261,7 @@ let sheetSelect = (event) => {
     }
     currentTarget.classList.add("active-sheet");
     sheetId = Number(currentTarget.getAttribute("sheetIdx")) - 1;
-    console.log("sheetSelectId - ",sheetId);
+    console.log("sheetSelectId - ", sheetId);
     sheetDB = workbookDB[sheetId];
     loadUI(sheetDB);
 };
@@ -357,6 +369,19 @@ let newSheetCreate = () => {
 
 
 
+
+
+
+
+
+// ```````````````````````````````````````````````````````````````````````````
+// ```````````````````````````````````````````````````````````````````````````
+// ````````````````````````` Formula Implementation `````````````````````````
+// ```````````````````````````````````````````````````````````````````````````
+// ```````````````````````````````````````````````````````````````````````````
+
+
+
 // ```````````````````````````````````````````````````````````````````````````
 // ``````````````` Updating values of selected cell with blur event ```````````````
 // ```````````````````````````````````````````````````````````````````````````
@@ -386,13 +411,11 @@ for (let i = 0; i < cells.length; i++) {
     });
 }
 
-// cells[0].click();
 
-// ``````````````````````````````````````````````````````````````````````````
-// ``````````````````````````````````````````````````````````````````````````
-// ``````````````````````````Formula implementation``````````````````````````
-// ``````````````````````````````````````````````````````````````````````````
-// ``````````````````````````````````````````````````````````````````````````
+
+// ```````````````````````````````````````````````````````````````````````````
+// ``````````````` Updating values from formula bar using keydown event ```````````````
+// ```````````````````````````````````````````````````````````````````````````
 formulaInput.addEventListener("keydown", (event) => {
     if (event.key == "Enter" && formulaInput.value != "") {
         let address = addressBox.value;
@@ -410,6 +433,11 @@ formulaInput.addEventListener("keydown", (event) => {
     }
 });
 
+
+
+// ```````````````````````````````````````````````````````````````````````````
+// ``````````````````````````````````` helper function ``````````````````````````````
+// ```````````````````````````````````````````````````````````````````````````
 let removeOldFormula = (cellObject, address) => {
     // removing the cell who's formula is changed, from children array of parent cells.
     removeChildren(formulaInput.value, address);
@@ -424,7 +452,6 @@ let newFormulaHandler = () => {
     // Step 2 -> Putting value in the selected cell (UI and DB)
     let address = addressBox.value;
     let { rId, cId } = getAdress(address);
-
     // 2.1 -> DB
     sheetDB[rId][cId].value = ans;
     // 2.2 -> UI
@@ -439,8 +466,7 @@ let newFormulaHandler = () => {
 
 let addChildren = (formula, address) => {
     let formulaTokens = formula.split(" ");
-    // split
-    // [(, A1, +, A2,)]
+    // split [(, A1, +, A2,)]
     for (let i = 0; i < formulaTokens.length; i++) {
         let firstCharOfToken = formulaTokens[i].charCodeAt(0);
         if (firstCharOfToken >= 65 && firstCharOfToken <= 90) {
@@ -451,7 +477,6 @@ let addChildren = (formula, address) => {
             if (!cellObject.children.includes(address)) {
                 cellObject.children.push(address);
             } else {
-                // cellObject.children.push(address);
                 console.log("Already has the value in children");
             }
         }
